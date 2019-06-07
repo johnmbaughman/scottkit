@@ -18,6 +18,14 @@ changequote(`[[[', `]]]')dnl
 * [Stage 5](#stage-5)
     * [Stage 5 map](#stage-5-map)
     * [Stage 5 source](#stage-5-source)
+* [Stage 6](#stage-6)
+    * [Stage 6 map](#stage-6-map)
+    * [Stage 6 source](#stage-6-source)
+* [Stage 7](#stage-7)
+    * [Stage 7 map](#stage-7-map)
+    * [Stage 7 source](#stage-7-source)
+* [Caveats](#caveats)
+
 
 ## Introduction
 
@@ -28,7 +36,7 @@ This document walks you through the process of creating a small but complete and
 
 This is the minimal playable game, consisting of rooms only - and only two of them.
 
-This stage is built entirely using the %room and %exit directives.
+This stage is built entirely using the `%room` and `%exit` directives.
 
 ### Stage 1 map
 
@@ -130,6 +138,48 @@ include(t5.map)dnl
 
 ```
 include(t5.sck)dnl
+```
+
+
+## Stage 6
+
+This stage adds standard boilerplate actions for `save game`, `quit game` and `examine`; is uses `examine` for several objects (and so makes the sign description less verbose), and shows how to override the standard behaviour of a verb (`inventory`) under unusual circumstances.
+
+This stage uses the same directives as the previous stage (and has the same map as that stage).
+
+### Stage 6 map
+
+```
+
+include(t6.map)dnl
+
+```
+
+### Stage 6 source
+
+```
+include(t6.sck)dnl
+```
+
+
+## Stage 7
+
+This stage uses a counter to implement a timed event: there is initially no way into the main complex, but ringing the doorbell in the first location starts a timer that results in a cave-in, and an entrance becoming available.
+
+This stage uses the same directives as the previous stage (and has a very similar map to that stage).
+
+### Stage 7 map
+
+```
+
+include(t7.map)dnl
+
+```
+
+### Stage 7 source
+
+```
+include(t7.sck)dnl
 ```
 
 
